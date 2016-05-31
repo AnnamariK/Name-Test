@@ -16,6 +16,7 @@ public class MyTestClassTemplate {
 	String URL = "https//example URL";
 	WebDriver browser;
 	MyTemplateSummaryPage summary;
+	MyTemplateLoginClass login = new MyTemplateLoginClass(browser);
 	
 	
 	
@@ -32,7 +33,7 @@ public class MyTestClassTemplate {
 
 	@When("^This is the when method login username \"([^\"]*)\" password \"([^\"]*)\"$")
 	public void this_is_the_when_method_login_username_password(String username, String password) throws Throwable {
-		MyTemplateLoginClass   login = new MyTemplateLoginClass(browser);
+		
 		login.typeUserName(username);
 		login.typePassword(password);
 		summary = login.clickLoginButton();	    
@@ -40,10 +41,8 @@ public class MyTestClassTemplate {
 
 	@Then("^This is the then method my balance will be \"([^\"]*)\"$")
 	public void this_is_the_then_method_my_balance_will_be(String expectedBalance) throws Throwable {		
-	   Assert.assertEquals(expectedBalance, summary.getBalance());
-	   
-	   MyTemplateLoginClass mtp = new MyTemplateLoginClass(browser);
-	   mtp = summary.clickSignOut();
+	   Assert.assertEquals(expectedBalance, summary.getBalance());	
+	   login = summary.clickSignOut();
 	   
 	}
 	
