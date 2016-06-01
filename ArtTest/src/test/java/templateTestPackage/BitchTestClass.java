@@ -30,6 +30,15 @@ public class BitchTestClass {
 	public void then_the_answer_should_be(String expectedAnswer) throws Throwable {
 	    Assert.assertEquals(expectedAnswer, actualAnswer);
 	}
+	
+	
+	
+	String mname = new String("radu");	
+	
+	public String myFun(){
+		return new String("radu");
+		
+	}
 
 
 }

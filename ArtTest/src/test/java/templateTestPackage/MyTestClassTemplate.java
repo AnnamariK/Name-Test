@@ -17,7 +17,8 @@ public class MyTestClassTemplate {
 	WebDriver browser;
 	MyTemplateSummaryPage summary;
 	MyTemplateLoginClass login;
-	
+	//if a variable is declared outside the test method, we shouldn't declare it again inside the method,
+	//because it will create a new value
 	
 	
 	@Before	
@@ -33,7 +34,7 @@ public class MyTestClassTemplate {
 
 	@When("^This is the when method login username \"([^\"]*)\" password \"([^\"]*)\"$")
 	public void this_is_the_when_method_login_username_password(String username, String password) throws Throwable {
-		MyTemplateLoginClass login = new MyTemplateLoginClass(browser);
+		login = new MyTemplateLoginClass(browser);
 		login.typeUserName(username);
 		login.typePassword(password);
 		summary = login.clickLoginButton();	    
@@ -41,9 +42,9 @@ public class MyTestClassTemplate {
 
 	@Then("^This is the then method my balance will be \"([^\"]*)\"$")
 	public void this_is_the_then_method_my_balance_will_be(String expectedBalance) throws Throwable {		
-	   Assert.assertEquals(expectedBalance, summary.getBalance());	
-	   login = summary.clickSignOut();
-	   
+	   Assert.assertEquals(expectedBalance, summary.getBalance());
+	   login = summary.clickSignOut(); 
+	   //here we call the method to sign out which directs to a new page, and parse the changed browser
 	}
 	
 	@After
@@ -52,3 +53,4 @@ public class MyTestClassTemplate {
 	}
 
 }
+
