@@ -17,6 +17,7 @@ public class MyTemplateSummaryPage {
 	
 	public MyTemplateSummaryPage(WebDriver browser){
 		Assert.assertEquals(title, browser.getTitle());//Assert page first, so it wont make any extra actions
+		//if i use assertTrue, i need the message to see exactly what is the error
 		this.browser = browser;						   //adding value to the browser
 		PageFactory .initElements(browser, this);	   //finding the webelements
 		
@@ -32,7 +33,7 @@ public class MyTemplateSummaryPage {
 		
 	}
 	//access,      type              name
-	public MyTemplateLoginClass clickSignOut() {
+	public MyTemplateLoginClass clickSignOut() { //MyTemplateLoginClass is a class/ the type of the method
 		signOut.click();
 		return new MyTemplateLoginClass(browser); //new MyTemplateLoginClass - we create the new object for the new page
 		//to return a value we only need to create the new object, and add return

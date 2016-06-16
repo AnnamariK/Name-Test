@@ -15,9 +15,8 @@ public class MyTemplateLoginClass {
 	@FindBy (name= "IDForLoginButton") private WebElement loginButton;
 	
 	public MyTemplateLoginClass(WebDriver browser) {
-		this.browser = browser;		
 		Assert.assertEquals(title, browser.getTitle());
-		//if i use assertTrue, i need the message to see exactly what is the error
+		this.browser = browser;
 		PageFactory.initElements(browser,this);
 		
 	}

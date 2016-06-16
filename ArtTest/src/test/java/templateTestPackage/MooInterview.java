@@ -26,10 +26,6 @@ public class MooInterview {
 		browser.get("www.Moo.com");//open the page
 		new Select(browser.findElement(By.id("WebelementDropdown"))).selectByValue("1");//do the select
 		
-		
-		
-		
-		
 	}
 
 }
