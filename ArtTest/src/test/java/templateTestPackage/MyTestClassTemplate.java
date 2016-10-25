@@ -29,6 +29,7 @@ public class MyTestClassTemplate {
 	
 	@Given("^This is the given method$") 
 	public void this_is_the_given_method() throws Throwable {
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Annamaria\\Downloads\\geckodriver-v0.11.1-win64\\geckodriver.exe");//using gecko for FF
 		browser.get(URL); // open the website	    
 	}
 
