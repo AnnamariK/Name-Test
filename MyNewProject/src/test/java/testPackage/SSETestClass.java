@@ -3,6 +3,7 @@ package testPackage;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.PendingException;
@@ -23,7 +24,8 @@ public class SSETestClass {
 	
 	@Before
 	public void openBrowser(){
-		browser = new FirefoxDriver();	
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Annamaria\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		browser = new ChromeDriver();	
 		
 	}
 	
@@ -48,9 +50,9 @@ public class SSETestClass {
 	}
 
 
-	@After
-	public void closeBrowser(){
-		browser.quit();
-		
-	}
+//	@After
+//	public void closeBrowser(){
+//		browser.quit();
+//		
+//	}
 }
