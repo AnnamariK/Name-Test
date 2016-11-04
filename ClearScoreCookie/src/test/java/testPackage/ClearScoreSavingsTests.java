@@ -11,7 +11,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pagePackage.ClearScoreSavingsPage;
 
-public class ClearScoreSavingsCalculator {
+public class ClearScoreSavingsTests {
 	
 	WebDriver browser;
 	String URL = "";
@@ -30,7 +30,8 @@ public class ClearScoreSavingsCalculator {
 	}
 
 	@When("^Customer sets the current score to (\\d+) and the score goal to (\\d+)$")
-	public void customer_sets_the_current_score_to_and_the_score_goal_to(int 50, int 680) throws Throwable {
+	public void customer_sets_the_current_score_to_and_the_score_goal_to(int currentScore, int goal) throws Throwable {
+		savingsPage = new ClearScoreSavingsPage(browser);
 		Actions action = new Actions(browser); 
 		action.dragAndDropBy(, 0, 10);
 	
