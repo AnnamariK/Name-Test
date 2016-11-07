@@ -36,7 +36,7 @@ public class ClearScoreCookiesTest {
 	}
 
 	@When("^Customer click the \"([^\"]*)\" button$")
-	public void customer_click_the_button(String arg1) throws Throwable {
+	public void customer_click_the_button() throws Throwable {
 		clearscore.clickNoProblem();  
 	}
 

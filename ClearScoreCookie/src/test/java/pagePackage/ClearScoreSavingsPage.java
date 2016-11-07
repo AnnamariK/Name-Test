@@ -12,7 +12,8 @@ public class ClearScoreSavingsPage {
 	WebDriver browser;
 	String title = "";
 	
-	@FindBy (css="input[class = 'cs-scalc__range-slider__input mdl-slider js-range-current']") private WebElement currentRangeSlider;
+	//@FindBy (css="input[class = 'cs-scalc__range-slider__input mdl-slider js-range-current']") private WebElement currentRangeSlider;
+	@FindBy (css="input[class = 'cs-scalc__range-slider__input.mdl-slider.js-range-current']") private WebElement currentRangeSlider;
 	@FindBy () private WebElement goalRangeSlider;
 	
 	public ClearScoreSavingsPage(WebDriver browser){
